@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Digital Clock</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        #clock {
+            font-size: 5em;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s infinite;
+            margin-bottom: 20px;
+        }
+
+        #date {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #controls button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            cursor: pointer;
+        }
+
+        #controls button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="clock"></div>
+    <div id="date"></div>
+    <div id="controls">
+        <button onclick="startCountdown()">Start Countdown</button>
+        <button onclick="startStopwatch()">Start Stopwatch</button>
+        <button onclick="setAlarm()">Set Alarm</button>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const day = now.toLocaleDateString('en-US', { weekday: 'long' });
+            const date = now.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('date').textContent = `${day}, ${date}`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock(); // Initialize the clock immediately
+
+        let countdownInterval;
+        let stopwatchInterval;
+        let stopwatchStartTime;
+
+        function startCountdown() {
+            const countdownTime = prompt("Enter countdown time in seconds:");
+            if (countdownTime !== null) {
+                let timeLeft = parseInt(countdownTime);
+                countdownInterval = setInterval(() => {
+                    if (timeLeft <= 0) {
+                        clearInterval(countdownInterval);
+                        alert("Countdown finished!");
+                    } else {
+                        document.getElementById('clock').textContent = `Countdown: ${timeLeft} seconds`;
+                        timeLeft--;
+                    }
+                }, 1000);
+            }
+        }
+
+        function startStopwatch() {
+            stopwatchStartTime = Date.now();
+            stopwatchInterval = setInterval(() => {
+                const elapsedTime = Math.floor((Date.now() - stopwatchStartTime) / 1000);
+                document.getElementById('clock').textContent = `Stopwatch: ${elapsedTime} seconds`;
+            }, 1000);
+        }
+
+        function setAlarm() {
+            const alarmTime = prompt("Enter alarm time (HH:MM):");
+            if (alarmTime !== null) {
+                const [hours, minutes] = alarmTime.split(':').map(Number);
+                const alarmDate = new Date();
+                alarmDate.setHours(hours, minutes, 0, 0);
+                if (alarmDate < Date.now()) {
+                    alarmDate.setDate(alarmDate.getDate() + 1);
+                }
+                const timeUntilAlarm = alarmDate - Date.now();
+                setTimeout(() => {
+                    alert("Alarm!");
+                }, timeUntilAlarm);
+            }
+        }
+    </script>
+</body>
+</html>
