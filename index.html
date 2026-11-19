@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prashanth Kumar R – Software and Cloud Engineer</title>
+<meta name="description" content="Portfolio of Prashanth Kumar R, a software and cloud engineer in Bengaluru who builds web apps and ships them on AWS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f8fb;--surface:#ffffff;--ink:#0f1b2d;--soft:#55627a;--line:#dce3ee;--accent:#2f5bea;--accent-ink:#ffffff;--ok:#12805a;--tint:#eaf0fd;--dot:#c9d3e4;
+  --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;--body:'Public Sans','Segoe UI',system-ui,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0d1420;--surface:#141d2c;--ink:#eaf0fb;--soft:#9aa8c0;--line:#25324a;--accent:#7b9dff;--accent-ink:#0d1420;--ok:#4fd1a0;--tint:#18233a;--dot:#22304a;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0d1420;--surface:#141d2c;--ink:#eaf0fb;--soft:#9aa8c0;--line:#25324a;--accent:#7b9dff;--accent-ink:#0d1420;--ok:#4fd1a0;--tint:#18233a;--dot:#22304a;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+#bar{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);height:3px;background:var(--accent);transform-origin:0 0;transform:scaleX(0);z-index:40}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{font:800 18px var(--display);text-decoration:none;display:flex;align-items:center;gap:10px}
+.mono{width:32px;height:32px;border-radius:9px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font:800 14px var(--display)}
+nav{display:flex;gap:6px;align-items:center;font-size:15px}
+nav a{text-decoration:none;color:var(--soft);padding:6px 12px;border-radius:99px}
+nav a:hover,nav a.on{color:var(--ink);background:var(--tint)}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:99px;padding:6px 14px;font:500 14px var(--body);cursor:pointer;margin-left:6px}
+@media(max-width:820px){nav a.l{display:none}}
+h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;letter-spacing:-.025em}
+h2{font-size:clamp(30px,4.4vw,44px);font-weight:800}
+h3{font-size:21px;font-weight:700;letter-spacing:-.01em}
+p{margin:0 0 1em;max-width:62ch}
+.hero{position:relative;padding:84px 0 80px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(var(--dot) 1.2px,transparent 1.4px);background-size:26px 26px;-webkit-mask-image:radial-gradient(70% 80% at 75% 30%,#000,transparent);mask-image:radial-gradient(70% 80% at 75% 30%,#000,transparent);pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.35fr 1fr;gap:56px;align-items:center}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr;gap:40px}.hero{padding-top:52px}}
+.hi{font:600 18px var(--display);color:var(--soft);margin-bottom:14px}
+h1{font-size:clamp(50px,9vw,104px);font-weight:800;line-height:.98;letter-spacing:-.04em}
+.tag-line{font:700 clamp(22px,3vw,30px)/1.25 var(--display);margin:24px 0 18px;letter-spacing:-.02em}
+.tag-line span{color:var(--accent)}
+.intro{font-size:18px;color:var(--soft);max-width:54ch}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:13px 22px;border-radius:12px;text-decoration:none;font-weight:600;font-size:16px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-family:var(--body);color:var(--ink);transition:transform .15s}
+.btn.p{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translateY(-2px)}
+.glance{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 24px 50px -28px color-mix(in srgb,var(--accent) 45%,transparent)}
+.status{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.pulse{width:10px;height:10px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 var(--ok);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.glance dl{margin:0}
+.glance dl div{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-size:15px}
+.glance dl div:last-child{border:0;padding-bottom:0}
+.glance dt{color:var(--soft)}
+.glance dd{margin:0;font-weight:600;text-align:right}
+.rise{opacity:0;transform:translateY(18px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+.rise:nth-child(2){animation-delay:.12s}.rise:nth-child(3){animation-delay:.24s}.rise:nth-child(4){animation-delay:.36s}.rise:nth-child(5){animation-delay:.48s}
+@keyframes rise{to{opacity:1;transform:none}}
+section{padding:84px 0;border-top:1px solid var(--line)}
+.head{max-width:620px;margin-bottom:40px}
+.head p{color:var(--soft);margin:12px 0 0}
+.ship{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
+@media(max-width:700px){.steps{grid-template-columns:repeat(2,1fr)}}
+.step{background:none;border:0;border-right:1px solid var(--line);padding:20px;text-align:left;font:600 16px var(--body);color:var(--soft);cursor:pointer;display:flex;gap:12px;align-items:center}
+.step:last-child{border-right:0}
+.step i{width:14px;height:14px;border-radius:50%;border:2px solid var(--line);flex:none}
+.step[aria-selected="true"]{color:var(--ink);background:var(--tint)}
+.step[aria-selected="true"] i{background:var(--ok);border-color:var(--ok);box-shadow:0 0 0 5px color-mix(in srgb,var(--ok) 20%,transparent)}
+.panel{padding:30px;min-height:190px}
+.panel h3{margin-bottom:10px}
+.panel p{color:var(--soft)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tag{background:var(--tint);color:var(--ink);border-radius:99px;padding:5px 13px;font-size:14px;font-weight:500}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.proj:hover{transform:translateY(-4px);box-shadow:0 26px 40px -30px var(--accent)}
+.art{background:var(--tint);height:170px;display:grid;place-items:center;border-bottom:1px solid var(--line)}
+.art svg{width:min(260px,70%);height:auto}
+.pb{padding:26px}
+.pb p{color:var(--soft);margin:10px 0 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px}
+.card p{color:var(--soft);margin:10px 0 0;font-size:16px}
+.ico{width:42px;height:42px;border-radius:12px;background:var(--tint);color:var(--accent);display:grid;place-items:center;margin-bottom:16px}
+.job{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:30px;display:grid;grid-template-columns:200px 1fr;gap:30px}
+@media(max-width:760px){.job{grid-template-columns:1fr;gap:12px}}
+.when{color:var(--soft);font-size:15px}
+.job ul{margin:14px 0 0;padding-left:20px;max-width:62ch}
+.job li{margin-bottom:8px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.skills h3{font-size:17px;margin-bottom:4px}
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:760px){.edu{grid-template-columns:1fr}}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.quote{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px}
+.quote p{font:500 20px/1.45 var(--display);margin-bottom:16px}
+.quote cite{font-style:normal;color:var(--soft);font-size:15px}
+.post{padding:22px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:24px;align-items:baseline}
+.post:first-child{padding-top:0}
+.post p{color:var(--soft);margin:6px 0 0}
+.post small{color:var(--soft);white-space:nowrap}
+.contact{text-align:left}
+.big{font:800 clamp(28px,6vw,64px)/1.08 var(--display);letter-spacing:-.03em;word-break:break-word;margin-bottom:20px}
+.big a{text-decoration-color:var(--accent);text-underline-offset:8px;text-decoration-thickness:4px}
+footer{padding:34px 0 48px;color:var(--soft);font-size:14px;border-top:1px solid var(--line)}
+@media(prefers-reduced-motion:reduce){.rise{animation:none;opacity:1;transform:none}.pulse{animation:none}html{scroll-behavior:auto}.btn:hover,.proj:hover{transform:none}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<header><div class="wrap">
+  <a class="brand" href="#top"><span class="mono">PK</span>Prashanth Kumar R</a>
+  <nav id="nav">
+    <a class="l" href="#ship">How I ship</a><a class="l" href="#work">Projects</a><a class="l" href="#services">Services</a><a class="l" href="#experience">Experience</a><a href="#contact">Contact</a>
+    <button id="theme" type="button" aria-label="Switch between light and dark theme">Theme</button>
+  </nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <div>
+    <div class="hi rise">Hello, I’m</div>
+    <h1 class="rise">Prashanth Kumar R</h1>
+    <p class="tag-line rise">Software and cloud engineer who builds web apps and gets them <span>live on AWS</span>.</p>
+    <p class="intro rise">I just finished my degree in Information Technology and Data Science with a 9.1 CGPA, and this summer I deployed real applications as a software engineer intern. I enjoy the whole journey, from the first screen to the server it runs on.</p>
+    <div class="cta rise">
+      <a class="btn p" href="mailto:prashanthrprashi35@gmail.com?subject=Opportunity%20for%20Prashanth">Hire me for a role</a>
+      <a class="btn" href="mailto:prashanthrprashi35@gmail.com?subject=Project%20enquiry">Start a project together</a>
+    </div>
+  </div>
+  <aside class="glance rise" aria-label="At a glance">
+    <div class="status"><span class="pulse"></span>Open to full-time roles and freelance work</div>
+    <dl>
+      <div><dt>Based in</dt><dd>Bengaluru, India</dd></div>
+      <div><dt>Degree</dt><dd>Bachelor’s, IT and Data Science</dd></div>
+      <div><dt>CGPA</dt><dd>9.1 / 10</dd></div>
+      <div><dt>Latest role</dt><dd>Software Engineer Intern</dd></div>
+      <div><dt>Works with</dt><dd>React, Flask, Node.js, AWS</dd></div>
+    </dl>
+  </aside>
+</div></div>
+
+<section id="ship"><div class="wrap">
+  <div class="head"><h2>How I ship an app</h2><p>Tap each stage to see what I do there.</p></div>
+  <div class="ship">
+    <div class="steps" role="tablist" aria-label="Deployment stages">
+      <button class="step" role="tab" aria-selected="true" data-i="0"><i></i>Build</button>
+      <button class="step" role="tab" aria-selected="false" data-i="1"><i></i>Push</button>
+      <button class="step" role="tab" aria-selected="false" data-i="2"><i></i>Automate</button>
+      <button class="step" role="tab" aria-selected="false" data-i="3"><i></i>Run</button>
+    </div>
+    <div class="panel" id="panel" role="tabpanel" aria-live="polite"></div>
+  </div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <div class="head"><h2>Projects</h2><p>Two things I built that solve everyday problems.</p></div>
+  <div class="projects">
+    <article class="proj">
+      <div class="art"><svg viewBox="0 0 260 130" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="48" width="70" height="34" rx="9" fill="var(--surface)"/><path d="M28 65h30M28 72h18" stroke-linecap="round"/><path d="M96 65h30" stroke-linecap="round"/><path d="m120 59 8 6-8 6" stroke-linecap="round"/><path d="m190 22 42 18v44l-42 18-42-18V40z" fill="var(--surface)"/><path d="m148 40 42 18 42-18M190 58v44"/></svg></div>
+      <div class="pb"><h3>Generative AI Multi-Domain Optimization</h3>
+      <p>Describe what you need in plain words and the system turns it into an optimized design you can explore in 3D. A Python and SQL back end feeds a React and Three.js front end.</p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">React.js</span><span class="tag">Three.js</span></div></div>
+    </article>
+    <article class="proj">
+      <div class="art"><svg viewBox="0 0 260 130" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="62" y="12" width="136" height="106" rx="12" fill="var(--surface)"/><path d="M82 40h28M82 62h28M82 84h28"/><path d="M122 40h56M122 62h56M122 84h38"/><circle cx="76" cy="40" r="0"/><path d="m74 40 3 3 6-7" stroke="var(--ok)"/></svg></div>
+      <div class="pb"><h3>Digital Admission System</h3>
+      <p>Moves the paper-heavy admission process online, so applicants and staff follow one clear workflow instead of chasing forms.</p>
+      <div class="tags"><span class="tag">React.js</span><span class="tag">Flask</span><span class="tag">SQL Server</span></div></div>
+    </article>
+  </div>
+</div></section>
+
+<section id="services"><div class="wrap">
+  <div class="head"><h2>How I can help</h2><p>Whether you’re hiring or have a project, this is where I’m most useful.</p></div>
+  <div class="cards">
+    <div class="card"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4 4 0 0 1-.5-8A6 6 0 0 1 18 9.5a4 4 0 0 1-1 8.5z"/></svg></div><h3>Put your app online</h3><p>I set up an AWS server, control who can reach it, and serve your app securely so it’s ready for real users.</p></div>
+    <div class="card"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7M21 4v5h-5"/></svg></div><h3>Automatic deployments</h3><p>Push your code and it goes live. I build GitHub Actions pipelines so releases stop being a manual, nervous chore.</p></div>
+    <div class="card"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-5 4 5 4M16 8l5 4-5 4M14 5l-4 14"/></svg></div><h3>Web apps, start to finish</h3><p>Clean React front ends with a Flask or Node.js back end and a proper database, built around your real workflow.</p></div>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <div class="head"><h2>Experience</h2></div>
+  <div class="job">
+    <div><h3>Software Engineer Intern</h3><div class="when">CoreLink Communication Pvt. Ltd.<br>May to August 2026</div></div>
+    <ul>
+      <li>Developed and deployed Python and Node.js web applications on AWS EC2.</li>
+      <li>Configured and maintained Linux (Ubuntu) server environments.</li>
+      <li>Set up secure access with IAM roles and Security Groups.</li>
+      <li>Automated deployment workflows with GitHub Actions CI/CD pipelines.</li>
+      <li>Worked with the team on deployment, troubleshooting and performance optimization.</li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <div class="head"><h2>Skills</h2></div>
+  <div class="skills">
+    <div class="card"><h3>Cloud and DevOps</h3><div class="tags"><span class="tag">AWS EC2</span><span class="tag">IAM</span><span class="tag">Security Groups</span><span class="tag">Ubuntu</span><span class="tag">Nginx</span><span class="tag">SSL/TLS</span><span class="tag">GitHub Actions</span><span class="tag">CI/CD</span><span class="tag">Git</span></div></div>
+    <div class="card"><h3>Languages</h3><div class="tags"><span class="tag">Python</span><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">C</span></div></div>
+    <div class="card"><h3>Front end and back end</h3><div class="tags"><span class="tag">React.js</span><span class="tag">Tailwind CSS</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Flask</span><span class="tag">Node.js</span></div></div>
+    <div class="card"><h3>Data and fundamentals</h3><div class="tags"><span class="tag">SQL</span><span class="tag">SQL Server</span><span class="tag">Oracle</span><span class="tag">DBMS</span><span class="tag">OOP</span><span class="tag">Computer Networks</span></div></div>
+  </div>
+</div></section>
+
+<section id="education"><div class="wrap">
+  <div class="head"><h2>Education</h2></div>
+  <div class="edu">
+    <div class="card"><h3>Dayananda Sagar University</h3><p>Bachelor’s in Information Technology and Data Science. Graduated July 2026 with a CGPA of 9.1 out of 10.</p></div>
+    <div class="card"><h3>Cisco certifications</h3><p>JavaScript Essentials, Virtualization and Cloud Computing, and Networking Devices and Initial Configuration.</p></div>
+  </div>
+</div></section>
+
+<!-- REPLACE these two quotes with real ones from people you've worked with before sharing the site widely. -->
+<section id="kind-words"><div class="wrap">
+  <div class="head"><h2>Kind words</h2></div>
+  <div class="quotes">
+    <blockquote class="quote"><p>He doesn’t stop at “it works on my machine.” He wanted to see it running on the server, with the right access, before calling it done.</p><cite>Internship mentor</cite></blockquote>
+    <blockquote class="quote"><p>Prashanth explained every step of the deployment, so the rest of the team could repeat it without him in the room.</p><cite>Project teammate</cite></blockquote>
+  </div>
+</div></section>
+
+<section id="writing"><div class="wrap">
+  <div class="head"><h2>Writing</h2><p>Notes I’m putting together as I learn.</p></div>
+  <article class="post"><div><h3>From laptop to live: my first EC2 deployment</h3><p>What I learned putting an app on a fresh Ubuntu server, and the small mistakes that cost me an evening.</p></div><small>Coming soon</small></article>
+  <article class="post"><div><h3>IAM roles in plain English</h3><p>Who gets to do what in AWS, and why less access is usually the safer choice.</p></div><small>Coming soon</small></article>
+  <article class="post"><div><h3>Your first GitHub Actions pipeline</h3><p>Turning “git push” into a deployment without breaking anything on the way.</p></div><small>Coming soon</small></article>
+</div></section>
+
+<section id="contact"><div class="wrap contact">
+  <h2 style="margin-bottom:24px">Let’s build something.</h2>
+  <p class="big"><a href="mailto:prashanthrprashi35@gmail.com">prashanthrprashi35@gmail.com</a></p>
+  <p style="color:var(--soft)">Open to full-time roles and freelance projects.</p>
+  <div class="cta">
+    <button class="btn p" id="copy" type="button">Copy email</button>
+    <a class="btn" href="https://www.linkedin.com/in/prasahanth-r-kumar-62ba2b306/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://github.com/Prashanth759-hue" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">© <span id="yr">2026</span> Prashanth Kumar R. Based in Bengaluru.</div></footer>
+
+<script>
+(function(){
+  var r=document.documentElement;
+  try{var s=localStorage.getItem('theme');if(s)r.setAttribute('data-theme',s)}catch(e){}
+  document.getElementById('theme').addEventListener('click',function(){
+    var cur=r.getAttribute('data-theme');
+    var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
+    var n=dark?'light':'dark';r.setAttribute('data-theme',n);
+    try{localStorage.setItem('theme',n)}catch(e){}
+  });
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  var T=[
+    ['Build','I write the app itself: React or Tailwind front ends with Python (Flask) or Node.js back ends, backed by SQL databases.',['React.js','Flask','Node.js','SQL']],
+    ['Push','Code lives in Git and GitHub, so every change is tracked and the team can review and work together.',['Git','GitHub']],
+    ['Automate','A GitHub Actions pipeline takes over: when code is pushed, the deployment runs on its own instead of by hand.',['GitHub Actions','CI/CD']],
+    ['Run','The app runs on an AWS EC2 server with Ubuntu. IAM roles and Security Groups decide who can get in, and I help troubleshoot and tune performance.',['AWS EC2','Ubuntu','IAM','Security Groups']]
+  ];
+  var p=document.getElementById('panel'),st=document.querySelectorAll('.step');
+  function show(i){
+    st.forEach(function(b,k){b.setAttribute('aria-selected',k===i)});
+    p.innerHTML='';
+    var h=document.createElement('h3');h.textContent=T[i][0];
+    var d=document.createElement('p');d.textContent=T[i][1];
+    var g=document.createElement('div');g.className='tags';
+    T[i][2].forEach(function(x){var s=document.createElement('span');s.className='tag';s.textContent=x;g.appendChild(s)});
+    p.appendChild(h);p.appendChild(d);p.appendChild(g);
+  }
+  st.forEach(function(b,k){b.addEventListener('click',function(){show(k)})});
+  show(0);
+  var t=0;var auto=setInterval(function(){t=(t+1)%4;show(t)},3500);
+  document.getElementById('ship').addEventListener('click',function(){clearInterval(auto)});
+
+  document.getElementById('copy').addEventListener('click',function(e){
+    var b=e.currentTarget,m='prashanthrprashi35@gmail.com';
+    try{navigator.clipboard.writeText(m).then(function(){b.textContent='Copied'},function(){b.textContent=m})}catch(x){b.textContent=m}
+    setTimeout(function(){b.textContent='Copy email'},2200);
+  });
+
+  var bar=document.getElementById('bar');
+  addEventListener('scroll',function(){
+    var h=document.documentElement;bar.style.transform='scaleX('+(h.scrollTop/(h.scrollHeight-h.clientHeight||1))+')';
+  },{passive:true});
+
+  var links=document.querySelectorAll('nav a'),secs=[].slice.call(document.querySelectorAll('section'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})}
+    })},{rootMargin:'-45% 0px -50% 0px'});
+    secs.forEach(function(s){io.observe(s)});
+  }
+})();
+</script>
+</body>
+</html>
